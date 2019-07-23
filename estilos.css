@@ -1,0 +1,23 @@
+body {
+	margin-bottom: 50px;
+}
+
+.jumbotron {
+	background-color: #FFEE56;
+}
+
+.margem {
+	margin-bottom: 5px;
+}
+
+.margem:first-of-type {
+	margin-top: 10px;
+}
+
+.margem:last-of-type {
+	margin-bottom: 25px;
+}
+
+.card {
+	border-radius: 10px;
+}
