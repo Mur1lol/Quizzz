@@ -7,7 +7,6 @@ var erros = 0
 var ptTot = 0;
 var c = 0;
 var t;
-var timer_is_on = 0;
 
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 
@@ -158,7 +157,6 @@ document.querySelector('.btn-quiz').addEventListener('click', function(){
         }
 
         timedCount(tamanho, tempo, acerto)
-
     })
     .catch(function(erro) {
         console.log(erro);
@@ -296,16 +294,18 @@ function timedCount(tamanho, tempo, acerto) {
     }
 
     if(c == time.length+1) {
-        stopCount()
-        contador(1,1)
         pontuou(acert.length*-1)
+        contador(1,1)
         blockBotao(tam.length)
+        stopCount()
     }
 }
 
 
 function stopCount() {
-  clearTimeout(t);
-  timer_is_on = 0;
-  c = 0
+    clearTimeout(t);
+    c = 0
+    tam.length = 0
+    time.length = 0
+    acert.length = 0        
 }
