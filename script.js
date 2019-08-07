@@ -266,7 +266,13 @@ function contador(part, erro) {
     erros = erros + erro
 
     if(erros == 3) {
-        alert("GAME OVER !!!\nPARTIDAS: "+partidas+"\nPONTUACAO: "+ptTot)
+        let timerInterval
+        Swal.fire({
+          title: 'Game Over!',
+          html: '<div>Pontuação: '+ptTot+'</div>'+
+          '<div>Partidas: '+partidas+'</div>',
+          type: 'error'
+        })
 
         ptTot = 0
         partidas = 0
